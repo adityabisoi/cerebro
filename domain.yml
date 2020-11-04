@@ -8,6 +8,29 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - inform
+  - search_provider
+
+entities:
+  - location
+  - facility_type
+
+slots:
+  location:
+    type: text
+  facility_type:
+    type: text
+  address:
+    type: text
+
+actions:
+  - utter_greet
+  - utter_happy
+  - utter_cheer_up
+  - utter_did_that_help
+  - action_facility_search
+  - utter_ask_location
+  - utter_goodbye
 
 responses:
   utter_greet:
@@ -19,6 +42,13 @@ responses:
 
   utter_did_that_help:
   - text: "Did that help you?"
+
+  action_facility_search:
+  - text: "Hi, it's Medical locator, how can I help you!"
+
+  utter_ask_location:
+  - text: "Can you please provide your location?"
+  - text: "Please provide address to find nearest {facility_type}"
 
   utter_happy:
   - text: "Great, carry on!"

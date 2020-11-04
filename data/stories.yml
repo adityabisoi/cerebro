@@ -2,6 +2,37 @@ version: "2.0"
 
 stories:
 
+- story: search hospital happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search_provider
+    entities:
+      - facility_type: 'hospital'
+      - location: 'Atlanta'
+  - action: action_facility_search
+  - slot_was_set:
+      - address: 'wadwadaw,a,wd,awd,ada,wdadw'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: search hospital + location
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search_provider
+    entities:
+      - location: 'Atlanta'
+  - action: utter_ask_location
+  - intent: inform
+    entities:
+      - location: 'Atlanta'
+  - action: action_facility_search
+  - slot_was_set:
+      - address: 'wadwadaw,a,wd,awd,ada,wdadw'
+  - intent: goodbye
+  - action: utter_goodbye
+
 - story: happy path
   steps:
   - intent: greet

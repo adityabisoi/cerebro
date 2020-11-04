@@ -17,13 +17,6 @@ nlu:
     - goodevening
     - good afternoon
 
-- intent: anime
-  examples: |
-    - [goblin slayer](name) anime
-    - show me [detective conan](name)
-    - [death note](name)
-    - [monogatari](name)
-
 - intent: inform
   examples: |
     - [San Francisco](location)
